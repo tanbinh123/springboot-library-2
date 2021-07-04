@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pro.demo.mapper.SeatMapper">
+    <select id="getAllSeat" resultType="com.pro.demo.entity.Seat">
+        SELECT * from seat
+    </select>
+
+    <select id="updateSeat" parameterType="com.pro.demo.entity.Seat">
+        update seat set floor = #{floor}, roomId = #{roomId}, deskId = #{deskId}, userSno = #{userSno} where id=#{id}
+    </select>
+
+    <select id="delSeat" parameterType="com.pro.demo.entity.Seat">
+        delete from seat where id=#{id}
+    </select>
+
+    <select id="addSeat" parameterType="com.pro.demo.entity.Seat">
+        insert into seat values (null, #{floor}, #{roomId}, #{deskId}, #{userSno})
+    </select>
+</mapper>

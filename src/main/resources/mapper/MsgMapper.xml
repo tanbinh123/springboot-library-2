@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pro.demo.mapper.MsgMapper">
+    <select id="getAllMsg" resultType="com.pro.demo.entity.Msg">
+        SELECT * from msg
+    </select>
+
+    <select id="addMsg" parameterType="com.pro.demo.entity.Msg" resultType="int">
+        insert into msg values (#{username}, #{msg}, null, #{send_time})
+    </select>
+
+    <select id="delMsg" parameterType="com.pro.demo.entity.Msg">
+        delete from msg where id=#{id}
+    </select>
+</mapper>

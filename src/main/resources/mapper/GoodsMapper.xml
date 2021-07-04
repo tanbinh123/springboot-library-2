@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pro.demo.mapper.GoodsMapper">
+    <select id="getAllGoods" resultType="com.pro.demo.entity.Goods">
+        SELECT * from goods
+    </select>
+
+    <select id="addGoods" parameterType="com.pro.demo.entity.Goods" resultType="int">
+        insert into goods values (null, #{username}, #{des}, #{goods}, #{sno}, #{imgSrc}, #{agree})
+    </select>
+
+    <select id="delGoods" parameterType="com.pro.demo.entity.Goods">
+        delete from goods where id=#{id}
+    </select>
+
+    <select id="updateGoods" parameterType="com.pro.demo.entity.Goods">
+        update goods set username = #{username}, des = #{des}, goods = #{goods}, sno = #{sno},imgSrc = #{imgSrc},agree = #{agree} where id=#{id}
+    </select>
+
+
+</mapper>
